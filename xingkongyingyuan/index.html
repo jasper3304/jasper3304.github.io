@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星空影院-星空影院在线电影观看_高清影视资源推荐</title>
+<meta name="description" content="星空影院是一个在线影视观看导航页面，汇集电影、剧集、纪录片等高清影视资源入口，提供清晰分类与片单推荐，帮助访客快速找到想看的星空影院内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1024'/%3E%3Ccircle cx='20' cy='18' r='3' fill='%23ffd479'/%3E%3Ccircle cx='44' cy='14' r='2' fill='%23ffd479'/%3E%3Ccircle cx='50' cy='34' r='2.5' fill='%23ffd479'/%3E%3Ccircle cx='16' cy='40' r='2' fill='%23ffd479'/%3E%3Cpath d='M22 44h20l-4 8H26z' fill='%237bd1ff'/%3E%3Cpath d='M32 24l4.5 7.5H27.5z' fill='%237bd1ff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#080c1c;
+  --bg-soft:#0f1530;
+  --card:#131a38;
+  --line:rgba(140,165,255,.18);
+  --txt:#e8ecff;
+  --muted:#a2adcf;
+  --gold:#ffd479;
+  --sky:#7bd1ff;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--txt);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(1.5px 1.5px at 12% 18%,rgba(255,255,255,.75),transparent),
+    radial-gradient(1.5px 1.5px at 78% 8%,rgba(255,255,255,.6),transparent),
+    radial-gradient(1px 1px at 35% 42%,rgba(255,255,255,.55),transparent),
+    radial-gradient(1.5px 1.5px at 62% 30%,rgba(255,212,121,.7),transparent),
+    radial-gradient(1px 1px at 88% 55%,rgba(255,255,255,.5),transparent),
+    radial-gradient(1px 1px at 22% 72%,rgba(255,255,255,.45),transparent),
+    radial-gradient(1.5px 1.5px at 52% 85%,rgba(123,209,255,.55),transparent),
+    radial-gradient(1px 1px at 92% 88%,rgba(255,255,255,.4),transparent);
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1120px,92vw);margin:0 auto;position:relative;z-index:1}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:20;
+  backdrop-filter:blur(14px);
+  background:rgba(8,12,28,.82);
+  border-bottom:1px solid var(--line);
+}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.16rem;letter-spacing:.5px;white-space:nowrap}
+.logo svg{width:34px;height:34px;flex:none}
+.logo span{background:linear-gradient(90deg,var(--gold),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{display:flex;gap:26px;list-style:none;font-size:.94rem}
+nav a{color:var(--muted);transition:color .2s}
+nav a:hover,nav a:focus-visible{color:var(--gold)}
+.nav-cta{
+  font-size:.9rem;padding:8px 18px;border-radius:999px;
+  border:1px solid rgba(255,212,121,.5);color:var(--gold);
+  transition:background .2s,color .2s;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--gold);color:#101530}
+
+/* hero */
+.hero{padding:64px 0 56px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8rem;letter-spacing:1px;color:var(--sky);
+  border:1px solid rgba(123,209,255,.35);border-radius:999px;
+  padding:5px 14px;margin-bottom:22px;background:rgba(123,209,255,.06);
+}
+h1{font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.24;letter-spacing:1px;margin-bottom:18px;font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold) 0%,#ffe9b8 45%,var(--sky) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1rem;max-width:36em;margin-bottom:28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 26px;border-radius:12px;font-weight:600;font-size:.95rem;
+  transition:transform .18s,box-shadow .18s,background .18s;
+}
+.btn-main{background:linear-gradient(120deg,var(--gold),#ffbe4d);color:#12172e;box-shadow:0 10px 26px rgba(255,190,77,.22)}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,190,77,.32)}
+.btn-ghost{border:1px solid var(--line);color:var(--txt);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{border-color:rgba(123,209,255,.55);color:var(--sky)}
+.hero-art{position:relative;display:flex;justify-content:center}
+.hero-art svg{width:100%;max-width:380px;filter:drop-shadow(0 20px 44px rgba(70,110,255,.24))}
+.screen-glow{
+  position:absolute;inset:auto 0 -10% 0;height:60%;
+  background:radial-gradient(ellipse at 50% 100%,rgba(123,209,255,.16),transparent 70%);
+  pointer-events:none;
+}
+.hero-stats{display:flex;gap:34px;margin-top:38px;flex-wrap:wrap}
+.stat b{display:block;font-size:1.4rem;color:var(--gold);letter-spacing:.5px}
+.stat small{color:var(--muted);font-size:.82rem}
+
+/* section base */
+section{padding:56px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:30px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:700;letter-spacing:.5px}
+.sec-head h2::before{
+  content:"";display:inline-block;width:6px;height:20px;border-radius:3px;
+  background:linear-gradient(180deg,var(--gold),var(--sky));margin-right:12px;vertical-align:-3px;
+}
+.sec-head p{color:var(--muted);font-size:.92rem;max-width:32em}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:linear-gradient(160deg,var(--card),var(--bg-soft));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px;transition:transform .2s,border-color .2s;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,212,121,.38)}
+.card-ico{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(123,209,255,.1);border:1px solid rgba(123,209,255,.25);margin-bottom:16px;
+}
+.card-ico svg{width:22px;height:22px}
+.card h3{font-size:1.05rem;margin-bottom:10px;font-weight:700}
+.card p{color:var(--muted);font-size:.9rem}
+
+/* film list */
+.film-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.film{
+  display:flex;gap:16px;align-items:flex-start;
+  background:rgba(255,255,255,.025);border:1px solid var(--line);
+  border-radius:14px;padding:18px 20px;
+}
+.film .poster{
+  width:56px;height:74px;border-radius:8px;flex:none;
+  display:grid;place-items:center;font-size:.72rem;font-weight:700;color:#111a33;
+  background:linear-gradient(150deg,var(--gold),#ff9f43);letter-spacing:.5px;text-align:center;line-height:1.2;
+}
+.film .poster.alt{background:linear-gradient(150deg,var(--sky),#5a7bff);color:#08122c}
+.film .poster.alt2{background:linear-gradient(150deg,#b8a4ff,#ff8fd0);color:#150a26}
+.film h3{font-size:.98rem;margin-bottom:6px}
+.film p{font-size:.85rem;color:var(--muted)}
+.film .meta{font-size:.76rem;color:rgba(162,173,207,.75);margin-top:6px;display:flex;gap:12px;flex-wrap:wrap}
+
+/* search */
+.search-box{background:linear-gradient(160deg,#121a3a,#0b1128);border:1px solid var(--line);border-radius:var(--radius);padding:32px}
+.search-box h2{font-size:1.25rem;margin-bottom:8px}
+.search-box>p{color:var(--muted);font-size:.9rem;margin-bottom:20px}
+.search-row{display:flex;gap:10px;flex-wrap:wrap}
+.search-row input{
+  flex:1 1 240px;padding:12px 16px;border-radius:10px;
+  background:#080e22;border:1px solid var(--line);color:var(--txt);font-size:.92rem;
+  font-family:inherit;
+}
+.search-row input:focus{outline:none;border-color:rgba(255,212,121,.6)}
+.search-row button{
+  padding:12px 26px;border-radius:10px;border:none;cursor:pointer;
+  background:linear-gradient(120deg,var(--gold),#ffbe4d);color:#12172e;
+  font-weight:700;font-size:.92rem;font-family:inherit;
+}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.chip{
+  font-size:.82rem;padding:6px 14px;border-radius:999px;
+  border:1px solid var(--line);color:var(--muted);cursor:pointer;
+  background:rgba(255,255,255,.03);transition:.2s;font-family:inherit;
+}
+.chip:hover,.chip.active{border-color:var(--gold);color:var(--gold);background:rgba(255,212,121,.08)}
+.search-result{font-size:.86rem;color:var(--sky);margin-top:14px;min-height:1.4em}
+
+/* about text */
+.prose{max-width:760px;color:var(--muted);font-size:.95rem}
+.prose p{margin-bottom:14px}
+.prose strong{color:var(--txt);font-weight:600}
+
+/* download strip */
+.dl{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  border:1px dashed rgba(255,212,121,.4);border-radius:var(--radius);
+  padding:28px 32px;background:rgba(255,212,121,.04);
+}
+.dl h2{font-size:1.15rem;margin-bottom:6px}
+.dl p{font-size:.88rem;color:var(--muted)}
+.dl-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 28px;border-radius:10px;font-weight:700;font-size:.92rem;
+  background:rgba(255,212,121,.16);color:var(--gold);border:1px solid rgba(255,212,121,.5);
+  pointer-events:none;opacity:.85;
+}
+
+/* footer */
+footer{border-top:1px solid var(--line);background:rgba(6,9,22,.9);padding:40px 0 26px;position:relative;z-index:1}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:28px}
+.foot-brand p{color:var(--muted);font-size:.86rem;margin-top:12px;max-width:30em}
+footer h4{font-size:.9rem;margin-bottom:12px;color:var(--txt);letter-spacing:.5px}
+footer ul{list-style:none;font-size:.86rem;color:var(--muted)}
+footer ul li{margin-bottom:8px}
+footer ul a:hover{color:var(--gold)}
+.copy{border-top:1px solid var(--line);padding-top:18px;font-size:.8rem;color:rgba(162,173,207,.7);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-art{order:-1;max-width:280px;margin:0 auto}
+  .cards{grid-template-columns:1fr 1fr}
+  .film-list{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  nav ul{display:none}
+  .nav-bar{padding:12px 0}
+  .hero{padding:40px 0 36px}
+  .cards{grid-template-columns:1fr}
+  section{padding:42px 0}
+  .foot-grid{grid-template-columns:1fr}
+  .dl{padding:22px}
+  .hero-stats{gap:22px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-bar">
+    <a href="#top" class="logo" aria-label="星空影院首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0b1024"/>
+        <circle cx="20" cy="18" r="3" fill="#ffd479"/>
+        <circle cx="44" cy="14" r="2" fill="#ffd479"/>
+        <circle cx="50" cy="34" r="2.5" fill="#ffd479"/>
+        <circle cx="16" cy="40" r="2" fill="#ffd479"/>
+        <path d="M22 44h20l-4 8H26z" fill="#7bd1ff"/>
+        <path d="M32 24l4.5 7.5H27.5z" fill="#7bd1ff"/>
+      </svg>
+      <span>星空影院</span>
+    </a>
+    <nav aria-label="主导航">
+      <ul>
+        <li><a href="#library">影视分类</a></li>
+        <li><a href="#picks">片单推荐</a></li>
+        <li><a href="#search">搜索找片</a></li>
+        <li><a href="#about">关于本站</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#search">开始找片</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="tag">高清影视 · 分类导航</div>
+        <h1><em>星空影院</em></h1>
+        <p>星空影院是一处面向影迷的观影导航页面，把电影、剧集、纪录片与动画分门别类地摆在同一片夜空下。你可以按类型浏览片单，也可以直接搜索片名，用更短的时间找到今晚想看的那一部。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#picks">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l14 9-14 9z"/></svg>
+            浏览今日片单
+          </a>
+          <a class="btn btn-ghost" href="#library">查看全部分类</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>6</b><small>影视分类频道</small></div>
+          <div class="stat"><b>12</b><small>本期推荐片目</small></div>
+          <div class="stat"><b>1</b><small>入口一站直达</small></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 400 300" role="img" aria-label="星空下的影院银幕插画">
+          <defs>
+            <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7bd1ff" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#ffd479" stop-opacity=".35"/>
+            </linearGradient>
+            <linearGradient id="beam" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0" stop-color="#7bd1ff" stop-opacity=".35"/>
+              <stop offset="1" stop-color="#7bd1ff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <circle cx="330" cy="52" r="26" fill="#ffd479" opacity=".22"/>
+          <circle cx="330" cy="52" r="15" fill="#ffd479" opacity=".6"/>
+          <g fill="#ffffff" opacity=".75">
+            <circle cx="40" cy="40" r="1.8"/><circle cx="92" cy="24" r="1.4"/>
+            <circle cx="150" cy="52" r="1.6"/><circle cx="212" cy="26" r="1.3"/>
+            <circle cx="262" cy="60" r="1.5"/><circle cx="60" cy="96" r="1.4"/>
+            <circle cx="300" cy="104" r="1.6"/><circle cx="360" cy="88" r="1.3"/>
+            <circle cx="24" cy="150" r="1.2"/><circle cx="128" cy="112" r="1.4"/>
+          </g>
+          <path d="M60 240 L200 108 L340 240 Z" fill="url(#beam)" opacity=".5"/>
+          <rect x="98" y="112" width="204" height="118" rx="8" fill="#0a1a33" stroke="url(#scr)" stroke-width="2"/>
+          <rect x="108" y="122" width="184" height="98" rx="4" fill="url(#scr)" opacity=".35"/>
+          <path d="M180 158 l34 22 -34 22z" fill="#ffe9b8" opacity=".9"/>
+          <rect x="88" y="230" width="224" height="8" rx="4" fill="#1b2a52"/>
+          <rect x="120" y="238" width="160" height="5" rx="2.5" fill="#14203f"/>
+          <g fill="#ffd479" opacity=".85">
+            <circle cx="52" cy="196" r="2"/><circle cx="356" cy="182" r="2"/>
+            <circle cx="38" cy="234" r="1.6"/><circle cx="368" cy="228" r="1.6"/>
+          </g>
+        </svg>
+        <div class="screen-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类 -->
+  <section id="library">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>影视分类频道</h2>
+        <p>星空影院按内容形态划分频道，每个频道对应一类观影需求，方便你从熟悉的入口进入。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#7bd1ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M7 4v16M17 4v16M2 9h5M17 9h5M2 15h5M17 15h5"/></svg>
+          </div>
+          <h3>电影长片</h3>
+          <p>院线与经典长片集中于此，涵盖剧情、科幻、悬疑、喜剧等常见类型，适合一次看完一个完整故事的夜晚。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ffd479" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 5v14M16 5v14"/></svg>
+          </div>
+          <h3>剧集连载</h3>
+          <p>分季分集的长篇内容，适合连续追看。星空影院的剧集频道按完结与连载标注，方便安排观看节奏。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#7bd1ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3>纪录片</h3>
+          <p>自然、人文、科技与历史题材的纪实内容，篇幅从单集到系列不等，适合想安静了解一个领域的观众。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ffd479" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.4 5.4 5.9.6-4.4 4 1.3 5.8L12 15.9 6.8 18.8 8.1 13 3.7 9l5.9-.6z"/></svg>
+          </div>
+          <h3>动画与短片</h3>
+          <p>动画长片、系列动画与独立短片合集，画风与题材跨度较大，适合想换一种视觉语言的时刻。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#7bd1ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+          </div>
+          <h3>主题合集</h3>
+          <p>按导演、年代、地区或情绪线索编排的专题合集，把散落在各频道的内容重新串成一条观看路线。</p>
+        </article>
+        <article class="card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ffd479" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.6-7 9-7 9z"/></svg>
+          </div>
+          <h3>收藏与回看</h3>
+          <p>把想看的片目先记下来，再按自己的时间安排逐个打开，避免在浏览中反复来回寻找。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 片单 -->
+  <section id="picks">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>本期片单推荐</h2>
+        <p>以下为星空影院本期整理的十二部片目中的一部分，类型各不相同，可按心情挑选。</p>
+      </div>
+      <div class="film-list">
+        <div class="film">
+          <div class="poster">科幻</div>
+          <div>
+            <h3>《深空回响》</h3>
+            <p>一支深空探测队在信号中断三年后重新与地面联络，带回的记录却与出发时的日志对不上。</p>
+            <div class="meta"><span>电影</span><span>剧情 / 科幻</span><span>适合静看</span></div>
+          </div>
+        </div>
+        <div class="film">
+          <div class="poster alt">悬疑</div>
+          <div>
+            <h3>《雾港十二时》</h3>
+            <p>十二小时内的港口小城，三条线索彼此交叉，观众需要跟着细节走到最后才看清全貌。</p>
+            <div class="meta"><span>剧集</span><span>悬疑 / 犯罪</span><span>共一季</span></div>
+          </div>
+        </div>
+        <div class="film">
+          <div class="poster alt2">纪录</div>
+          <div>
+            <h3>《候鸟纬度》</h3>
+            <p>跟随候鸟迁徙路线横跨三个气候带，用长时间镜头记录沿途地貌与季节变化。</p>
+            <div class="meta"><span>纪录片</span><span>自然 / 生态</span><span>系列</span></div>
+          </div>
+        </div>
+        <div class="film">
+          <div class="poster">动画</div>
+          <div>
+            <h3>《纸灯行》</h3>
+            <p>以手工纸艺质感呈现的动画长片，讲述一盏纸灯在节日夜里穿过整座城市的旅程。</p>
+            <div class="meta"><span>动画</span><span>奇幻 / 治愈</span><span>合家观看</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 搜索 -->
+  <section id="search">
+    <div class="wrap">
+      <div class="search-box">
+        <h2>在星空影院搜索片名</h2>
+        <p>输入关键词即可在本页片单中筛选，也可以点击下方标签快速定位类型。</p>
+        <div class="search-row">
+          <input type="search" id="q" placeholder="输入片名或类型，如：科幻、悬疑、动画" aria-label="搜索片名或类型">
+          <button type="button" id="go">搜索</button>
+        </div>
+        <div class="chips" role="group" aria-label="快速筛选">
+          <button class="chip" type="button" data-k="科幻">科幻</button>
+          <button class="chip" type="button" data-k="悬疑">悬疑</button>
+          <button class="chip" type="button" data-k="纪录">纪录片</button>
+          <button class="chip" type="button" data-k="动画">动画</button>
+          <button class="chip" type="button" data-k="">全部</button>
+        </div>
+        <div class="search-result" id="res" aria-live="polite">共 4 部片目可筛选</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>关于星空影院</h2>
+      </div>
+      <div class="prose">
+        <p><strong>星空影院</strong>的定位是一个影视观看导航页面，而不是内容生产方。页面本身不存储影片文件，也不提供播放能力，它做的是把分散的影视入口、分类标签和片单信息整理到同一页，让访客少走弯路。</p>
+        <p>我们理解访客的核心需求通常只有两个：一是知道最近有什么可看，二是尽快找到某一部具体作品。因此星空影院把页面分成分类频道、片单推荐和片名搜索三块，分别对应“漫无目的地逛”“有方向地挑”和“目标明确地找”三种状态。</p>
+        <p>片单中的类型标注、篇幅形态与观看建议来自编辑整理，属于主观推荐而非评分结论；分类频道的划分按内容形态展开，同一部作品可能同时符合多个标签。若某部片目信息与实际不符，以作品官方页面为准。星空影院会持续更新片单，但更新节奏取决于编辑整理进度，不做固定承诺。</p>
+        <p>如果你只是想随便看看，可以从今日片单进入；如果你已经想好片名，直接用搜索框输入即可。无论哪种方式，星空影院都希望把选择的过程变得短一些，把真正看片的时间留给你。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载 -->
+  <section>
+    <div class="wrap">
+      <div class="dl">
+        <div>
+          <h2>星空影院片单速览</h2>
+          <p>把本期分类与片单整理成一份可离线查看的清单，方便在没有网络时翻阅。</p>
+        </div>
+        <a class="dl-btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#0b1024"/>
+            <circle cx="20" cy="18" r="3" fill="#ffd479"/>
+            <circle cx="44" cy="14" r="2" fill="#ffd479"/>
+            <circle cx="50" cy="34" r="2.5" fill="#ffd479"/>
+            <circle cx="16" cy="40" r="2" fill="#ffd479"/>
+            <path d="M22 44h20l-4 8H26z" fill="#7bd1ff"/>
+            <path d="M32 24l4.5 7.5H27.5z" fill="#7bd1ff"/>
+          </svg>
+          <span>星空影院</span>
+        </a>
+        <p>星空影院是影视观看导航页面，汇集分类频道与片单信息，不存储影片文件，也不提供播放服务。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#library">影视分类频道</a></li>
+          <li><a href="#picks">本期片单推荐</a></li>
+          <li><a href="#search">搜索找片</a></li>
+          <li><a href="#about">关于星空影院</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>常见入口</h4>
+        <ul>
+          <li><a href="#picks">电影长片</a></li>
+          <li><a href="#picks">剧集连载</a></li>
+          <li><a href="#picks">纪录片</a></li>
+          <li><a href="#picks">动画与短片</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 星空影院 · 影视导航页面</span>
+      <span>片单信息以编辑整理为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items = Array.prototype.slice.call(document.querySelectorAll('.film'));
+  var q = document.getElementById('q');
+  var res = document.getElementById('res');
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+
+  function run(key){
+    var k = (key || '').trim().toLowerCase();
+    var n = 0;
+    items.forEach(function(el){
+      var hit = !k || el.textContent.toLowerCase().indexOf(k) > -1;
+      el.style.display = hit ? '' : 'none';
+      if(hit) n++;
+    });
+    res.textContent = n ? '匹配到 ' + n + ' 部片目' : '没有匹配的片目，试试“科幻”“悬疑”“动画”';
+  }
+
+  document.getElementById('go').addEventListener('click', function(){ run(q.value); });
+
+  q.addEventListener('input', function(){ run(q.value); });
+
+  q.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); run(q.value); }
+  });
+
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('active'); });
+      c.classList.add('active');
+      q.value = c.dataset.k;
+      run(c.dataset.k);
+    });
+  });
+})();
+</script>
+</body>
+</html>
