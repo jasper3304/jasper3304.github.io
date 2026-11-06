@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄果短剧全集-黄果短剧全集全集合集_黄果短剧全集在线观看</title>
+<meta name="description" content="黄果短剧全集主题首页，汇集黄果短剧全集的剧集脉络、人物看点与追剧入口，帮你快速了解黄果短剧全集的整体内容与观看路径。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5a623'/%3E%3Cpath d='M20 18h16a8 8 0 0 1 8 8v20a8 8 0 0 1-8 8H20z' fill='%23fff'/%3E%3Cpath d='M26 26l14 8-14 8z' fill='%23f5a623'/%3E%3C/svg%3E">
+<style>
+:root{
+  --amber:#f5a623;
+  --amber-deep:#d98612;
+  --ink:#23201c;
+  --ink-soft:#5c554c;
+  --paper:#fdf8f0;
+  --card:#ffffff;
+  --line:#efe3d2;
+  --leaf:#3f7d58;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(253,248,240,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:.5px}
+.brand .mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(135deg,#ffc457,#ef9412);
+  display:grid;place-items:center;flex:none;
+  box-shadow:0 4px 12px rgba(217,134,18,.28);
+}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap}
+.nav-links a{
+  font-size:14px;color:var(--ink-soft);padding:7px 12px;border-radius:20px;
+  transition:.2s;
+}
+.nav-links a:hover{background:#f6e8d2;color:var(--ink)}
+
+/* hero */
+.hero{padding:52px 0 44px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:44px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--amber-deep);font-weight:700;
+  background:#fdf0d8;padding:6px 14px;border-radius:20px;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(28px,4.2vw,44px);
+  line-height:1.25;letter-spacing:.5px;font-weight:800;
+  margin-bottom:18px;
+}
+h1 .hl{
+  background:linear-gradient(transparent 62%,#ffd98a 62%);
+  padding:0 2px;
+}
+.hero p.lead{font-size:16px;color:var(--ink-soft);max-width:46ch;margin-bottom:26px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:12px;font-size:15px;font-weight:700;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:var(--amber);color:#2a1d05;box-shadow:0 8px 20px rgba(245,166,35,.32)}
+.btn-primary:hover{background:#ffb53a;transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line);background:#fff;color:var(--ink)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber-deep)}
+.btn[data-download-placeholder="true"]{cursor:default;opacity:.9;pointer-events:none}
+
+.hero-visual{position:relative}
+.poster-stack{
+  border-radius:22px;overflow:hidden;
+  background:linear-gradient(160deg,#ffe0a8,#f7b23c 55%,#e08a12);
+  aspect-ratio:4/3.4;
+  display:grid;place-items:center;
+  box-shadow:0 24px 50px -20px rgba(217,134,18,.55);
+}
+.poster-stack svg{width:78%;height:auto}
+.badge-float{
+  position:absolute;bottom:-16px;left:-14px;
+  background:#fff;border-radius:14px;padding:10px 16px;
+  box-shadow:0 12px 28px rgba(60,40,10,.14);
+  font-size:13px;font-weight:700;color:var(--ink-soft);
+  display:flex;align-items:center;gap:8px;
+}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--leaf)}
+
+/* stats strip */
+.strip{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:#fffdf9;
+}
+.strip-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:22px 0}
+.stat{text-align:center}
+.stat b{display:block;font-size:22px;color:var(--amber-deep);font-weight:800}
+.stat span{font-size:13px;color:var(--ink-soft)}
+
+/* section base */
+section{padding:56px 0}
+.sec-head{margin-bottom:30px;max-width:60ch}
+.sec-head .kicker{
+  font-size:13px;font-weight:700;color:var(--amber-deep);
+  letter-spacing:2px;margin-bottom:8px;display:block;
+}
+.sec-head h2{font-size:clamp(22px,2.8vw,30px);font-weight:800;line-height:1.35;margin-bottom:10px}
+.sec-head p{color:var(--ink-soft);font-size:15px}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:24px;transition:.25s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -18px rgba(120,80,20,.28);border-color:#f2d7ac}
+.card .ico{
+  width:44px;height:44px;border-radius:12px;background:#fdf0d8;
+  display:grid;place-items:center;margin-bottom:16px;
+}
+.card h3{font-size:17px;font-weight:800;margin-bottom:8px}
+.card p{font-size:14px;color:var(--ink-soft)}
+
+/* episode list */
+.ep-wrap{background:#fffdf9;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ep-list{display:grid;gap:12px}
+.ep{
+  display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:16px 20px;transition:.2s;
+}
+.ep:hover{border-color:#f0cf9b;box-shadow:0 8px 22px -14px rgba(120,80,20,.3)}
+.ep .no{
+  font-weight:800;color:var(--amber-deep);font-size:15px;
+  background:#fdf0d8;border-radius:10px;height:40px;display:grid;place-items:center;
+}
+.ep h4{font-size:15.5px;font-weight:700;margin-bottom:2px}
+.ep small{color:var(--ink-soft);font-size:13px}
+.ep .tag{
+  font-size:12px;color:var(--leaf);font-weight:700;
+  background:#eaf4ee;padding:4px 12px;border-radius:20px;white-space:nowrap;
+}
+
+/* reading block */
+.read-grid{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start}
+.read h3{font-size:18px;font-weight:800;margin:24px 0 10px}
+.read h3:first-child{margin-top:0}
+.read p{color:var(--ink-soft);font-size:15px;margin-bottom:12px}
+.aside{
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;
+  position:sticky;top:88px;
+}
+.aside h4{font-size:15px;font-weight:800;margin-bottom:14px}
+.aside ul{list-style:none;display:grid;gap:10px}
+.aside li{font-size:14px;color:var(--ink-soft);display:flex;gap:10px}
+.aside li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber);margin-top:9px;flex:none}
+.aside .dl{
+  display:block;text-align:center;margin-top:18px;padding:11px;border-radius:11px;
+  background:var(--amber);color:#2a1d05;font-weight:700;font-size:14px;
+}
+
+/* footer */
+footer.site{
+  background:#241d14;color:#cbb9a2;padding:44px 0 30px;margin-top:20px;
+}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:28px}
+.foot-brand{max-width:320px}
+.foot-brand strong{display:flex;align-items:center;gap:10px;color:#fff;font-size:16px;margin-bottom:10px}
+.foot-brand p{font-size:13.5px;line-height:1.7}
+.foot-cols{display:flex;gap:56px;flex-wrap:wrap}
+.foot-cols h5{color:#fff;font-size:14px;margin-bottom:12px}
+.foot-cols a{display:block;font-size:13.5px;margin-bottom:8px;color:#b8a68f}
+.foot-cols a:hover{color:var(--amber)}
+.copy{border-top:1px solid #3a3025;padding-top:20px;font-size:12.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero-visual{max-width:420px}
+  .cards{grid-template-columns:1fr 1fr}
+  .read-grid{grid-template-columns:1fr}
+  .aside{position:static}
+  .strip-inner{grid-template-columns:1fr 1fr;row-gap:20px}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .cards{grid-template-columns:1fr}
+  .ep{grid-template-columns:44px 1fr;gap:12px;padding:14px}
+  .ep .tag{grid-column:2;justify-self:start;margin-top:4px}
+  .hero{padding:36px 0 30px}
+  .btn{padding:11px 18px;font-size:14px}
+  section{padding:40px 0}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-bar">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M6 4h8a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H6z" fill="#fff"/>
+          <path d="M9.5 9l6 3.5-6 3.5z" fill="#e08a12"/>
+        </svg>
+      </span>
+      黄果短剧全集
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#top">首页</a>
+      <a href="#highlights">看点</a>
+      <a href="#episodes">剧集脉络</a>
+      <a href="#story">剧情解读</a>
+      <a href="#download">获取全集</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">● 黄果短剧全集 · 主题首页</span>
+        <h1><span class="hl">黄果短剧全集</span></h1>
+        <p class="lead">这是一个围绕黄果短剧全集建立的观看与了解入口：从作品脉络、人物关系，到每一部的看点与观看方式，把黄果短剧全集的整体面貌讲清楚，方便你一次看明白再决定从哪里开始追。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#episodes">
+            查看剧集脉络
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#story">先读剧情解读</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="poster-stack">
+          <svg viewBox="0 0 300 260" role="img" aria-label="黄果短剧全集主题插画">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#fff6e2"/>
+                <stop offset="1" stop-color="#ffe3ae"/>
+              </linearGradient>
+            </defs>
+            <circle cx="150" cy="128" r="96" fill="url(#g1)"/>
+            <rect x="86" y="58" width="128" height="142" rx="14" fill="#fff" opacity=".95"/>
+            <rect x="100" y="72" width="100" height="66" rx="8" fill="#f5a623" opacity=".28"/>
+            <path d="M138 92l26 15-26 15z" fill="#e08a12"/>
+            <rect x="100" y="150" width="72" height="9" rx="4.5" fill="#e8d6ba"/>
+            <rect x="100" y="167" width="52" height="9" rx="4.5" fill="#efe1cb"/>
+            <circle cx="212" cy="76" r="18" fill="#3f7d58" opacity=".85"/>
+            <path d="M206 70c6-6 14-4 16 2" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <circle cx="84" cy="176" r="12" fill="#f5a623" opacity=".7"/>
+          </svg>
+        </div>
+        <div class="badge-float"><span class="dot"></span>按集数顺序梳理 · 便于连续观看</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="strip">
+    <div class="wrap strip-inner">
+      <div class="stat"><b>4</b><span>内容看点分区</span></div>
+      <div class="stat"><b>6</b><span>剧集脉络条目</span></div>
+      <div class="stat"><b>3</b><span>人物关系线索</span></div>
+      <div class="stat"><b>1</b><span>完整观看入口</span></div>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTS -->
+  <section id="highlights">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">内容看点</span>
+        <h2>黄果短剧全集为什么值得按顺序看</h2>
+        <p>短剧的节奏快、转折密，黄果短剧全集的看点集中在人物动机和情节推进的衔接上。下面四个角度，是理解黄果短剧全集时最容易被忽略、也最影响观感的地方。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d98612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l7-5 7 5"/><path d="M5 8v9l7 4 7-4V8"/></svg>
+          </div>
+          <h3>主线清晰，切口很小</h3>
+          <p>黄果短剧全集并不铺开大场面，而是从一个具体的处境切入，再让人物的选择推动情节。按顺序看，主线几乎不会断。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d98612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.6"/><path d="M15.5 14.5c2.6.2 4.5 1.9 4.5 4.5"/></svg>
+          </div>
+          <h3>人物关系是核心变量</h3>
+          <p>谁和谁站在一起、谁在隐瞒，决定了每一段剧情的张力。黄果短剧全集的人物线索不复杂，但需要连续观看才能对上。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d98612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+          </div>
+          <h3>单集短，适合整段追</h3>
+          <p>单集时长短，是短剧最直接的观看优势。黄果短剧全集的节奏偏紧凑，一集接一集看，比跳着看更容易抓住伏笔。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d98612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6 4 4 6-7"/><path d="M4 21h16"/></svg>
+          </div>
+          <h3>结局回扣前文</h3>
+          <p>结尾往往会回到开头埋下的那个细节上。看完黄果短剧全集再回头翻前几集，会更容易发现前后呼应的安排。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d98612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="M8 9.5h5M8 13h8"/></svg>
+          </div>
+          <h3>对白信息密度高</h3>
+          <p>很多关键信息藏在对话里，而不是画面上。看黄果短剧全集时留意对白，能提前预判人物下一步的动作。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d98612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l2.4 5 5.6.7-4 4 1 5.6L12 16.6 6.9 19.3l1-5.6-4-4L9.6 9z"/></svg>
+          </div>
+          <h3>适合二刷找细节</h3>
+          <p>第一遍看情节，第二遍看铺垫。黄果短剧全集的篇幅不算长，二刷成本低，往往能发现第一次漏掉的线索。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EPISODES -->
+  <div class="ep-wrap">
+    <section id="episodes">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="kicker">剧集脉络</span>
+          <h2>按顺序认识黄果短剧全集</h2>
+          <p>下面的条目按观看顺序排列，每条对应黄果短剧全集中的一个阶段，说明这一段要解决的问题和值得留意的细节，方便你对照进度。</p>
+        </div>
+        <div class="ep-list">
+          <article class="ep">
+            <div class="no">01</div>
+            <div>
+              <h4>开场：处境交代</h4>
+              <small>先交代人物的日常与压力，把故事的前提摆清楚。</small>
+            </div>
+            <span class="tag">铺垫</span>
+          </article>
+          <article class="ep">
+            <div class="no">02</div>
+            <div>
+              <h4>转折：第一处冲突</h4>
+              <small>关键事件出现，人物关系开始分化，伏笔在这里埋下。</small>
+            </div>
+            <span class="tag">转折</span>
+          </article>
+          <article class="ep">
+            <div class="no">03</div>
+            <div>
+              <h4>推进：选择与代价</h4>
+              <small>人物做出决定，局面变复杂，黄果短剧全集的节奏在这一段提速。</small>
+            </div>
+            <span class="tag">推进</span>
+          </article>
+          <article class="ep">
+            <div class="no">04</div>
+            <div>
+              <h4>拉扯：关系再洗牌</h4>
+              <small>信息差被放大，谁掌握真相成为剧情的关键变量。</small>
+            </div>
+            <span class="tag">张力</span>
+          </article>
+          <article class="ep">
+            <div class="no">05</div>
+            <div>
+              <h4>收束：矛盾集中爆发</h4>
+              <small>此前累积的误会与隐瞒集中显现，主线走向明朗。</small>
+            </div>
+            <span class="tag">高潮</span>
+          </article>
+          <article class="ep">
+            <div class="no">06</div>
+            <div>
+              <h4>落点：回扣开头</h4>
+              <small>结尾回应开头细节，黄果短剧全集在这里完成情节闭环。</small>
+            </div>
+            <span class="tag">收尾</span>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="wrap read-grid">
+      <div class="read">
+        <div class="sec-head" style="margin-bottom:22px">
+          <span class="kicker">剧情解读</span>
+          <h2>看懂黄果短剧全集，先弄明白三件事</h2>
+        </div>
+        <h3>一、故事从一个人的处境开始</h3>
+        <p>黄果短剧全集的起点并不宏大，它先把人物放进一个具体的境况里：有要面对的问题，也有不愿放下的东西。观众之所以能迅速进入状态，正是因为开场没有绕弯子，而是直接给出人物当下的处境和选择范围。理解了这一层，后面每一次转折才不会显得突然。</p>
+        <h3>二、冲突不是靠巧合推进的</h3>
+        <p>很多短剧依赖巧合制造冲突，而黄果短剧全集更依赖人物自己的判断。每个阶段的矛盾，几乎都能在前一段找到对应的动机。也正因如此，黄果短剧全集更适合连续观看：跳过中间段落，人物的行为就会显得缺少解释。留意台词里反复出现的关键信息，往往能提前判断接下来的走向。</p>
+        <h3>三、结尾的价值在于回看</h3>
+        <p>第一次看完黄果短剧全集，感受可能集中在情节的转折上；等到二刷，才会发现开头那些看似随意的细节其实都有用处。这种前后呼应的安排，是黄果短剧全集比较耐看的地方。如果你习惯做笔记，不妨把每一段的关键台词记下来，再对照结尾，理解会更完整。</p>
+        <p>需要说明的是，以上是对作品叙事结构的梳理，具体情节与人物设置请以实际播出的黄果短剧全集内容为准。</p>
+      </div>
+      <aside class="aside">
+        <h4>观看建议</h4>
+        <ul>
+          <li>按剧集顺序看，先别跳段落</li>
+          <li>留意重复出现的台词与道具</li>
+          <li>人物关系变动处适合暂停回想</li>
+          <li>看完结局再回看开头两段</li>
+        </ul>
+        <a class="dl" id="download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">从哪里开始</span>
+        <h2>把黄果短剧全集看完的简单路径</h2>
+        <p>如果你只是听说黄果短剧全集，建议先从开场两段看起，确认人物关系后再往下推进；如果已经看过一部分，可以对照上面的剧集脉络，检查自己漏掉了哪一段。黄果短剧全集的篇幅不长，按顺序完整看一遍，通常比零散跳看更有收获。需要保存剧集内容的读者，可以使用右侧的下载入口，具体可用范围以实际提供为准。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <strong>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 4h8a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H6z" fill="#f5a623"/><path d="M9.5 9l6 3.5-6 3.5z" fill="#241d14"/></svg>
+          黄果短剧全集
+        </strong>
+        <p>黄果短剧全集的观看与了解入口，梳理剧集脉络、人物线索与叙事看点，帮助读者按顺序完整认识这部短剧。</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h5>浏览</h5>
+          <a href="#highlights">内容看点</a>
+          <a href="#episodes">剧集脉络</a>
+          <a href="#story">剧情解读</a>
+        </div>
+        <div>
+          <h5>入口</h5>
+          <a href="#top">回到顶部</a>
+          <a href="#download">获取全集</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 黄果短剧全集 主题首页</span>
+      <span>内容以实际播出为准</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
